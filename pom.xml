@@ -4,15 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <dependency>
     <groupId>com.nukkitx</groupId>
     <artifactId>nukkit</artifactId>
     <version>1.0-SNAPSHOT</version>
-</dependency>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- Adicione aqui as dependências necessárias do seu projeto -->
+    </dependencies>
 
     <build>
         <plugins>
-            <!-- Plugin para empacotar o JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -22,34 +24,9 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                        <configuration>
-                            <classifier>with-dependencies</classifier> <!-- Adiciona o classifier -->
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- Plugin do Heroku para compilar a aplicação -->
-            <plugin>
-                <groupId>com.heroku.sdk</groupId>
-                <artifactId>heroku-maven-plugin</artifactId>
-                <version>3.0.0</version>
-            </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <!-- Definir a versão do Java para o Heroku -->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-
-    <!-- Informar a classe principal -->
-    <dependencies>
-        <dependency>
-            <groupId>com.nukkitx</groupId>
-            <artifactId>nukkit</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>
